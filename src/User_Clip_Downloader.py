@@ -28,6 +28,7 @@ from tqdm import tqdm
 from tkinter import messagebox
 import random
 
+
 # 이 부분은 일부러 비웠습니다.
 # 아래 두 주소 참고해서 본인만의 키를 발급 받아 사용하세요 킹아!
 # https://dev.twitch.tv/docs/api/get-started
