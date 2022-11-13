@@ -32,7 +32,7 @@ from tkinter import messagebox
 # 아래 두 주소 참고해서 본인만의 키를 발급 받아 사용하세요 킹아!
 # https://dev.twitch.tv/docs/api/get-started
 # https://dev.twitch.tv/docs/authentication/getting-tokens-oauth/#oauth-client-credentials-flow
-headers={'Authorization': 'Bearer sev771hx6gxz7f9fso4utp5f1disxp', 'client-id': 'n0ngkqgxuek9p3fplo6uqxw5rv2gr1'}
+headers={'Authorization': '', 'client-id': ''}
 
 
 # 스트리머별 ID
@@ -45,13 +45,10 @@ segu_id = '245391004'
 vii_id = '195641865'
 
 
-# 쪼갤 시간 (초)
+# 쪼갤 시간 (초) 안씀
 Time_Split_Step_sec = 86400 #7200
 
 
-# 클립 검색을 위해 몇 분 단위로 쪼갤지 몰라서 생각한 방식
-# 너무 길면 클립 몇개가 짤리고, 너무 짧으면 비효율적
-# 그래서 내가 안 정하고 기계가 정하라고 함
 def clip_search(streamer_id, now, dt, next_page=''):
 
     now_1 =  now + timedelta(seconds=dt)
@@ -315,7 +312,7 @@ if __name__ == '__main__':
                 for i in range(0, task_num):
                     args.append([st + timedelta(seconds=(dt*i)), st + timedelta(seconds=(dt*(i+1))), streamer_id, user_name])
                 
-                
+                #'''
                 raw_res_lists=[]
                 #raw_res_lists = pool.map(get_clip_info_from_twitch, args)
                 for x in tqdm(pool.imap(get_clip_info_from_twitch, args), total=task_num):
